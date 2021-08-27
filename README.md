@@ -29,3 +29,12 @@ with the following declaration:
  * @return Whether |middle_angle| is between |first_angle| and |second_angle| (exclusive).
  */
 bool isAngleBetween(float first_angle, float middle_angle, float second_angle);
+```
+
+## Submission Instructions
+You can either:
+
+1. Push your code to a public repository and send us the repository's link (preferred)
+2. Send us your code as a zip file
+
+Please include instructions on how to run your unit tests. 
