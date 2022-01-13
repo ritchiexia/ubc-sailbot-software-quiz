@@ -19,6 +19,6 @@ def is_angle_between(first_angle, middle_angle, second_angle):
         second_angle (float): The second bounding angle in degrees.
 
     Returns:
-        bool: True when `middle_angle` is in the acute angle between `first_angle` and `second_angle`, false otherwise.
+        bool: True when `middle_angle` is not in the reflex angle of `first_angle` and `second_angle`, false otherwise.
     """
     return True
