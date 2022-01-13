@@ -1,7 +1,7 @@
 from standard_calc import bound_to_180, is_angle_between
 
 
-""" Tests for is_angle_between() """
+""" Tests for bound_to_180() """
 
 
 def test_bound_basic1():
