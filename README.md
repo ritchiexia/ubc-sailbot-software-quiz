@@ -1,40 +1,41 @@
 # Technical Quiz - UBC Sailbot Software
 
-Using C++ or Python, please write a class, named **AngleCalc** that contains the following methods. Please write accompanying unit tests as well using any framework you desire (e.g. [GoogleTest](https://github.com/google/googletest), [unittest](https://docs.python.org/3/library/unittest.html])). You may use any resources you find but must complete the quiz individually.
+## Instructions
 
-1. An autonomous sailing program uses angles between -180 and 179. Create a method with the
-following declaration:
+1. Clone this repository
 
-```C++
-/**
- * Bounds the provided angle between [-180, 180) degrees.
- * Ex. 360 becomes 0, 270 becomes -90, -450 becomes -90.
- * @param angle Input angle in degrees.
- * @return The bounded angle in degrees.
- */
-float boundTo180(float angle);
-```
+2. Create a public repository
 
-2. It's incredibly valuable to be able to determine whether an angle is between two others. Create a method
-with the following declaration:
+3. Change the "origin" remote to point to the public repository you created
 
-```C++
-/**
- * Determines whether |middle_angle| is in the acute angle between the other two bounding angles.
- * Note: Input angles are bounded to 180 for safety.
- * Ex. -180 is between -90 and 110 but not between -90 and 80.
- * @param first_angle First angle in degrees.
- * @param middle_angle Middle angle in degrees.
- * @param second_angle Second angle in degrees.
- * @return Whether |middle_angle| is between |first_angle| and |second_angle| (exclusive).
- */
-bool isAngleBetween(float first_angle, float middle_angle, float second_angle);
-```
+4. Complete the Python functions in `standard_calc.py`
 
-## Submission Instructions
-You can either:
+5. Write PyTest unit tests in `test_standard_calc.py`
 
-1. Push your code to a public repository and send us the repository's link (preferred)
-2. Send us your code as a zip file
+6. Pushing your code will run a linter and your tests.
+You can find the results in the Actions tab on GitHub.
+    - To run these tests locally on your computer, execute the `flake8` and `pytest` commands in `.github/workflows/python-app.yml`:
 
-Please include instructions on how to run your unit tests. 
+        ```sh
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        ```
+
+        ```sh
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        ```
+
+        ```sh
+        pytest
+        ```
+
+7. When you are done, send us your repository's link
+
+## Resources
+
+You may use any resources you find but must complete the quiz individually.
+Here are some resources to get you started:
+
+- [Python](https://www.python.org/about/gettingstarted/)
+- [PyTest](https://docs.pytest.org/en/6.2.x/getting-started.html)
+- [Flake8](https://flake8.pycqa.org/en/latest/)
+- [GitHub Actions](https://docs.github.com/en/actions/quickstart#viewing-your-workflow-results)
