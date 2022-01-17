@@ -113,3 +113,12 @@ def test_between_p2p_wrap():
 
 def test_between_p2p_wrap_f():
     assert ~is_angle_between(405, 90, 720)
+
+
+# NO REFLEX ANGLE TESTS
+def test_between_180():
+    assert is_angle_between(-90, 45, 90)
+
+
+def test_between_180_2():
+    assert is_angle_between(90, 180, -90)
