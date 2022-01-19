@@ -35,7 +35,7 @@ def is_angle_between(first_angle, middle_angle, second_angle):
 
     f, s = sorted((f, s))
     # if difference is 180 or 0, no reflex angle to be "in"
-    if fabs(f - s) == 180.0 or f == s:
+    if fabs(f - s) == 180.0 or f == s or m == f or m == s:
         return True
     if s - f > 180.0:
         return m < f or m > s
