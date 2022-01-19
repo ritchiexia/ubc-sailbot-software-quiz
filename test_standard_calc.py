@@ -115,6 +115,15 @@ def test_between_p2p_wrap_f():
     assert ~is_angle_between(405, 90, 720)
 
 
+# FLIPPED MIDDLE VALUE TESTS
+def test_between_flip1():
+    assert is_angle_between(-91, 100, 91)
+
+
+def test_between_flip2():
+    assert ~is_angle_between(171, -200, -371)
+
+
 # NO REFLEX ANGLE TESTS
 def test_between_180():
     assert is_angle_between(-90, 45, 90)
@@ -122,3 +131,7 @@ def test_between_180():
 
 def test_between_180_2():
     assert is_angle_between(90, 180, -90)
+
+
+def test_between_0():
+    assert is_angle_between(0, 0, 360)
