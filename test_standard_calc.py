@@ -62,7 +62,7 @@ def test_between_n2n2():
 
 
 def test_between_n2n_f():
-    assert ~is_angle_between(-4.2, 2.0, -2.1)
+    assert not is_angle_between(-4.2, 2.0, -2.1)
 
 
 def test_between_n2n_wrap():
@@ -70,7 +70,7 @@ def test_between_n2n_wrap():
 
 
 def test_between_n2n_wrap_f():
-    assert ~is_angle_between(-270, -400, -360)
+    assert not is_angle_between(-270, -400, -360)
 
 
 # NEGATIVE TO POSITIVE/POSITIVE TO NEGATIVE TESTS
@@ -83,7 +83,7 @@ def test_between_n2p2():
 
 
 def test_between_n2p_f():
-    assert ~is_angle_between(-1.1, -2.0, 2.1)
+    assert not is_angle_between(-1.1, -2.0, 2.1)
 
 
 def test_between_n2p_wrap():
@@ -91,7 +91,7 @@ def test_between_n2p_wrap():
 
 
 def test_between_n2p_wrap_f():
-    assert ~is_angle_between(180, 170, -170)
+    assert not is_angle_between(180, 170, -170)
 
 
 # POSITIVE TO POSITIVE TESTS
@@ -104,7 +104,7 @@ def test_between_p2p2():
 
 
 def test_between_p2p_f():
-    assert ~is_angle_between(1.2, 0, 40.1)
+    assert not is_angle_between(1.2, 0, 40.1)
 
 
 def test_between_p2p_wrap():
@@ -112,16 +112,16 @@ def test_between_p2p_wrap():
 
 
 def test_between_p2p_wrap_f():
-    assert ~is_angle_between(405, 90, 720)
+    assert not is_angle_between(405, 90, 720)
 
 
 # FLIPPED MIDDLE VALUE TESTS
 def test_between_flip1():
-    assert is_angle_between(-91, 100, 91)
+    assert not is_angle_between(-90, 90.5, 91)
 
 
 def test_between_flip2():
-    assert ~is_angle_between(171, -200, -371)
+    assert not is_angle_between(171, -200, -371)
 
 
 # NO REFLEX ANGLE TESTS

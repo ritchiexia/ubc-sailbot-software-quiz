@@ -1,4 +1,4 @@
-from math import fmod
+from math import fmod, fabs
 
 
 def bound_to_180(angle):
@@ -34,9 +34,9 @@ def is_angle_between(first_angle, middle_angle, second_angle):
     s = bound_to_180(second_angle)
 
     f, s = sorted((f, s))
-    # if difference it 180, no reflex angle to be a "in"
-    if abs(f - s) == 180 or f == s:
+    # if difference is 180 or 0, no reflex angle to be "in"
+    if fabs(f - s) == 180.0 or f == s:
         return True
-    if abs(f - s) > 180:
-        m = bound_to_180(m - 180)
+    if s - f > 180.0:
+        return m < f or m > s
     return f < m < s
